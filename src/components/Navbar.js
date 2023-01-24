@@ -5,24 +5,24 @@ function Navbar() {
   return (
     <div className='flex justify-between px-4 py-4 items-center'>
 
-        <div className='text-4xl'>
-            <h1>Real State</h1>
+        <div className='text-xl'>
+            <h1>Realestate</h1>
             
         </div>
        
         <div className='flex justify-center cursor-pointer'>
             
-            <div className='text-xl px-4 hover:text-primary transition delay-150 hover:border-b-[3px] mx-2 border-primary'>
+            <div className='text-lg px-4 hover:text-primary transition delay-150 hover:border-b-[3px] mx-2 border-primary'>
 
                 <h1>Link</h1>
 
             </div>
-            <div className='text-xl px-4 hover:text-primary transition delay-150 hover:border-b-[3px] mx-2 border-primary'>
+            <div className='text-lg px-4 hover:text-primary transition delay-150 hover:border-b-[3px] mx-2 border-primary'>
 
                 <h1>Link</h1>
 
             </div>
-            <div className='text-xl px-4 hover:text-primary transition delay-150 hover:border-b-[3px] mx-2 border-primary'>
+            <div className='text-lg px-4 hover:text-primary transition delay-150 hover:border-b-[3px] mx-2 border-primary'>
 
                 <h1>Link</h1>
 

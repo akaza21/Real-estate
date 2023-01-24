@@ -2,6 +2,7 @@ import Bubble from '@/components/bubble'
 import Card from '@/components/Card'
 import MapBox from '@/components/MapBox'
 import Navbar from '@/components/Navbar'
+import SearchBox from '@/components/SearchBox'
 import Head from 'next/head'
 import Image from 'next/image'
 // import { Inter } from '@next/font/google'
@@ -13,7 +14,8 @@ export default function Home() {
   return (
     <>
     <Navbar/>
-    <div className='flex justify-start items-center mt-4'>
+    <div className='flex justify-start items-center mt-4 px-4'>
+      <SearchBox/>
       <Bubble>
         <h1 className=''>Hello</h1>
       </Bubble>
@@ -29,7 +31,7 @@ export default function Home() {
     <div className='flex justify-center  w-full px-4 py-8   '>
 
 
-      <div className='grid grid-cols-2 gap-4  w-full overflow-y-scroll h-[70vh] px-2 py-6'>
+      <div className='grid grid-cols-2 gap-4  w-full px-2 py-6'>
         <Card/>
         <Card/>
         <Card/>

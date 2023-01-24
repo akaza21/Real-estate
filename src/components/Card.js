@@ -3,16 +3,41 @@ import Bubble from './Bubble'
 import {MdOutlineKingBed} from 'react-icons/md'
 import {BiBath} from 'react-icons/bi'
 import {FaRuler} from 'react-icons/fa'
+import Image from 'next/image'
+import {BsFillSuitHeartFill} from 'react-icons/bs'
 function Card() {
   return (
-    <div className='w-full shadow-md rounded-3xl '>
-        <div className='rounded-3xl h-[15vh] bg-gray-500 w-full' id='card-img'>
+    <div className='w-full shadow-lg rounded-3xl '>
+        <div className='rounded-3xl h-[18vh] bg-gray-500 w-full relative' id='card-img'>
+          <Image src={'https://picsum.photos/id/237/200/300'} className="rounded-3xl" fill objectFit='cover'  />
+
+          <div className='absolute top-4 flex justify-between w-full items-start'>
+            <div className='flex justify-start'>
+              <Bubble color={'#468fd1'}>
+                <div className='text-xs text-white'>
+                  <h1>New</h1>
+                </div>
+              </Bubble>
+              <Bubble color={'primary'}></Bubble>
+            </div>
+            
+            <div>
+              <Bubble>
+                <div className='text-lg'>
+                  <BsFillSuitHeartFill/>
+
+
+                </div>
+              </Bubble>
+            </div>
+
+          </div>
 
         </div>
         <div className='p-4' id='card-text'>
             <div>
                 <h1 className='text-2xl'>Text here</h1>
-                <p className='text-base opacity-40'>lorem ipsum dolor sut</p>
+                <p className='text-base opacity-40'>lorem ipsum dolor sut jhgsduklhghgdiouuisydiogsigdiosghioudhsog sdjhbasjhdhasbv</p>
 
             </div>
 

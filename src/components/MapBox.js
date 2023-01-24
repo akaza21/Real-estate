@@ -15,7 +15,7 @@ function MapBox() {
   const [lng, setLng] = useState(54.37585762735543);
   const [lat, setLat] = useState(24.45677614934833);
   return (
-    <div className=" rounded-3xl px-4">
+    <div className=" rounded-3xl px-8">
       {/* <div  id="map" className="map-container h-[80vh] rounded-3xl pl-8" /> */}
       <Map
         mapboxAccessToken={"pk.eyJ1Ijoic2hheWFuY3liZXIiLCJhIjoiY2thYnpkbzZoMWJvZjJzbWs1NTF1ZWdjYiJ9.xgAjG8iToZXzqPPHLiD9Kg"}
@@ -29,8 +29,9 @@ function MapBox() {
         initialViewState={{
           longitude: lng,
           latitude: lat,
+          zoom:9
         }}
-        mapStyle="mapbox://styles/mapbox/streets-v9"
+        mapStyle="mapbox://styles/mapbox/light-v11"
       >
         <Marker longitude={lng} latitude={lat} />
         <NavigationControl position="bottom-right" />
