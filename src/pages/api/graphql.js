@@ -24,6 +24,8 @@ const typeDefs = gql`
     area:Float
     isLiked:Boolean
     isForSale:Boolean
+    lat:Float
+    lng:Float
 
   }
   input PropertyInpuit {
@@ -34,6 +36,8 @@ const typeDefs = gql`
     area:Float
     isLiked:Boolean
     isForSale:Boolean
+    lat:Float
+    lng:Float
     
   }
   type Query {
@@ -48,12 +52,12 @@ const resolvers = {
       getProperties: async() => {
             
             let properties= await Property.find().limit(10)
-            // console.log(properties);
+            console.log(properties);
             return properties
         }
     },
     Mutation:{
-        async createProperty(_, {propertInput:{price, description, beds, bathroom, area, isLiked, isForSale}}){
+        async createProperty(_, {propertInput:{price, description, beds, bathroom, area, isLiked, isForSale, lat, lng}}){
             const createProperty = new Property({
               price:price,
               description:description,
@@ -61,7 +65,10 @@ const resolvers = {
               bathroom:bathroom,
               area:area,
               isLiked:isLiked,
-              isForSale:isForSale
+              isForSale:isForSale,
+              lat:lat,
+              lng:lng
+
             })
       
       

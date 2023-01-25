@@ -5,25 +5,37 @@ import {BiBath} from 'react-icons/bi'
 import {FaRuler} from 'react-icons/fa'
 import Image from 'next/image'
 import {BsFillSuitHeartFill} from 'react-icons/bs'
-function Card({item}) {
+
+function Card({item, index}) {
   return (
-    <div className='w-full shadow-lg rounded-3xl '>
-        <div className='rounded-3xl h-[18vh] bg-gray-500 w-full relative' id='card-img'>
+    <div className='w-full shadow-lg my-2  rounded-3xl transition ease-in-out delay-150 hover:-translate-y-2 hover:scale-105 cursor-pointer'>
+        <div className='rounded-3xl h-[20vh] bg-gray-500 w-full relative' id='card-img'>
           <Image src={'https://picsum.photos/id/237/200/300'} className="rounded-3xl" fill objectFit='cover'  />
 
-          <div className='absolute top-4 flex justify-between w-full items-start'>
-            <div className='flex justify-start'>
-              <Bubble color={'#468fd1'}>
-                <div className='text-xs text-white'>
+          <div className='absolute top-6 flex justify-between w-full items-start px-4'>
+            <div className='flex justify-start font-semibold'>
+            {index=== 0 && (
+                <Bubble color={'#54D497'}>
+                  <div className='text-xs text-white'>
                   <h1>New</h1>
                 </div>
+                </Bubble>
+              )}
+              {item.isForSale && (
+                <Bubble color={'#468fd1'}>
+                <div className='text-xs text-white'>
+                  <h1>For Sale</h1>
+                </div>
               </Bubble>
-              <Bubble color={'primary'}></Bubble>
+              )}
+              
+              
             </div>
             
             <div>
-              <Bubble>
-                <div className='text-lg'>
+              <Bubble color={'#ffffff'}>
+                
+                <div className={item.isLiked ? `text-lg text-red-600` :'text-lg'}>
                   <BsFillSuitHeartFill/>
 
 
@@ -36,17 +48,20 @@ function Card({item}) {
         </div>
         <div className='p-4' id='card-text'>
             <div>
-                <h1 className='text-2xl'>{item.price}</h1>
+                <h1 className='text-2xl font-bold'>$ {item.price}</h1>
                 <p className='text-base opacity-40'>{item.description}</p>
 
             </div>
 
-            <div className='flex justify-start mt-3'>
+            <div className='flex justify-start mt-3 font-semibold'>
               <Bubble>
                 {/* <BiBed/> */}
                 <div className='flex justify-center items-center' id='text'>
+                  <div className='text-[#df9034] font-black text-lg'>
+
                   <MdOutlineKingBed/>
-                  <h1 className='text-sm ml-3'>2</h1>
+                  </div>
+                  <h1 className='text-sm ml-3'>{item.beds}</h1>
 
                 </div>
 
@@ -54,8 +69,11 @@ function Card({item}) {
               <Bubble>
                 {/* <BiBed/> */}
                 <div className='flex justify-center items-center' id='text'>
-                  <BiBath/>
-                  <h1 className='text-sm ml-3'>2</h1>
+                  <div className='text-[#468fd1] text-lg'>
+
+                    <BiBath/>
+                  </div>
+                  <h1 className='text-sm ml-3'>{item.bathroom}</h1>
 
                 </div>
 
@@ -63,8 +81,11 @@ function Card({item}) {
               <Bubble>
                 {/* <BiBed/> */}
                 <div className='flex justify-center items-center' id='text'>
+                  <div className='text-[#43b4a6] text-lg'>
+
                   <FaRuler/>
-                  <h1 className='text-sm ml-3'>2</h1>
+                  </div>
+                  <h1 className='text-sm ml-3'>{item.area} m</h1>
 
                 </div>
 

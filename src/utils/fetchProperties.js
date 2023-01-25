@@ -1,14 +1,17 @@
 const axios = require("axios");
 const endpoint = "http://localhost:3000/api/graphql";
-const headers = {
-  "content-type": "application/json",
-  Authorization: "<token>",
-};
+
 const graphqlQuery = `query Query{
         getProperties{
-            price
-            
+          price
           description
+          beds
+          bathroom
+          area
+          isLiked
+          isForSale
+          lat
+          lng
         }
       }`
   

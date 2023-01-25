@@ -7,7 +7,9 @@ const propertySchema = new Schema({
     bathroom:Number,
     area:Number,
     isLiked:Boolean,
-    isForSale:Boolean
+    isForSale:Boolean,
+    lat:Number,
+    lng:Number
 })
 
 

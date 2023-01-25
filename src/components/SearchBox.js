@@ -3,7 +3,7 @@ import {FiSearch} from 'react-icons/fi'
 
 function SearchBox() {
   return (
-    <div className='flex justify-start items-center bg-gray-200 p-2 px-4 rounded-lg'>
+    <div className='flex justify-start items-center bg-gray-200 p-2 px-4 rounded-lg opacity-60'>
 
         <div className='text-xl'>
 

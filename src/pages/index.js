@@ -4,28 +4,38 @@ import MapBox from '@/components/MapBox'
 import Navbar from '@/components/Navbar'
 import SearchBox from '@/components/SearchBox'
 import fetchProperties from '@/utils/fetchProperties'
-import Head from 'next/head'
-import Image from 'next/image'
+import { useEffect } from 'react'
 // import { Inter } from '@next/font/google'
 // import styles from '@/styles/Home.module.css'
 
 // const inter = Inter({ subsets: ['latin'] })
 
 export default function Home({properties}) {
+  
   return (
     <>
     <Navbar/>
-    <div className='flex justify-start items-center mt-4 px-4'>
+    <div className='flex justify-start items-center mt-6 px-8'>
       <SearchBox/>
       <Bubble>
-        <h1 className=''>Hello</h1>
+        <h1 className='mx-4'>Hello</h1>
       </Bubble>
       <Bubble>
-        <h1 className=''>Hello</h1>
+        <h1 className='mx-4'>Hello</h1>
       </Bubble>
       <Bubble>
-        <h1 className=''>Hello</h1>
+        <h1 className='mx-4'>Hello</h1>
       </Bubble>
+      <Bubble>
+        <h1 className='mx-4'>Hello</h1>
+      </Bubble>
+      <Bubble>
+        <h1 className='mx-4'>Hello</h1>
+      </Bubble>
+      <Bubble>
+        <h1 className='mx-4'>Hello</h1>
+      </Bubble>
+   
 
     </div>
 
@@ -35,7 +45,7 @@ export default function Home({properties}) {
       <div className='grid grid-cols-2 gap-4  w-full px-2 py-6'>
         {properties.map((item, index)=>{
           return <div key={index}>
-            <Card item={item}/>
+            <Card item={item} index={index}/>
           </div>
         })}
         
@@ -43,7 +53,7 @@ export default function Home({properties}) {
       </div>
       <div className=' w-full'>
 
-        <MapBox/>
+        <MapBox properties={properties} />
        
 
       </div>
