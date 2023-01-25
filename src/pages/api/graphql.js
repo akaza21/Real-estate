@@ -2,6 +2,7 @@
 import { gql, ApolloServer } from "apollo-server-micro";
 import {ApolloServerPluginLandingPageGraphQLPlayground} from "apollo-server-core"
 import mongoose from "mongoose";
+import Property from "@/db/models/Property";
 const mongoString= 'mongodb://127.0.0.1:27017/'
 const Book = require('../../db/models/Books')
 mongoose.connect(mongoString,{useNewUrlParser:true}).then(()=>{
@@ -12,47 +13,59 @@ mongoose.connect(mongoString,{useNewUrlParser:true}).then(()=>{
 }).then(()=>{
     
 })
-let v = [
-    {
-        "id": 0,
-        "name": "JavaScript for Dummies"
-    }
-  // ... Write a few more ...
-]
+
 
 const typeDefs = gql`
-  type Book {
-    id: ID!
-    name: String
+  type Property {
+    price:Float
+    description: String
+    beds:Int
+    bathroom:Int
+    area:Float
+    isLiked:Boolean
+    isForSale:Boolean
+
   }
-  input BookInput {
-    name:String
+  input PropertyInpuit {
+    price:Float
+    description: String
+    beds:Int
+    bathroom:Int
+    area:Float
+    isLiked:Boolean
+    isForSale:Boolean
     
   }
   type Query {
-    getBooks: [Book]
+    getProperties: [Property]
   }
   type Mutation {
-    createBook(bookInput : BookInput):Book!
+    createProperty(propertyInput : PropertyInpuit):Property!
   }
 `;
 const resolvers = {
     Query: {
-        getBooks: async() => {
+      getProperties: async() => {
             
-            let books= await Book.find().limit(10)
-            console.log(books);
-            return books
+            let properties= await Property.find().limit(10)
+            // console.log(properties);
+            return properties
         }
     },
     Mutation:{
-        async createBook(_, {bookInput:{name}}){
-            const createBook = new Book({
-              name:name
+        async createProperty(_, {propertInput:{price, description, beds, bathroom, area, isLiked, isForSale}}){
+            const createProperty = new Property({
+              price:price,
+              description:description,
+              beds:beds,
+              bathroom:bathroom,
+              area:area,
+              isLiked:isLiked,
+              isForSale:isForSale
             })
       
       
-            const res = await createBook.save()
+            const res = await createProperty.save()
             return {
               id:res.id,
               ...res._doc

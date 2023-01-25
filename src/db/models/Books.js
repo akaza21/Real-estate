@@ -5,4 +5,4 @@ const bookSchema = new Schema({
   name:String,
 })
 
-module.exports = mongoose.models.Book || mongoose.model('Book', bookSchema,"Books");
+module.exports = mongoose.models.Book || mongoose.model('Book', bookSchema)

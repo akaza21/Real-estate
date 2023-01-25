@@ -5,7 +5,7 @@ import {BiBath} from 'react-icons/bi'
 import {FaRuler} from 'react-icons/fa'
 import Image from 'next/image'
 import {BsFillSuitHeartFill} from 'react-icons/bs'
-function Card() {
+function Card({item}) {
   return (
     <div className='w-full shadow-lg rounded-3xl '>
         <div className='rounded-3xl h-[18vh] bg-gray-500 w-full relative' id='card-img'>
@@ -36,8 +36,8 @@ function Card() {
         </div>
         <div className='p-4' id='card-text'>
             <div>
-                <h1 className='text-2xl'>Text here</h1>
-                <p className='text-base opacity-40'>lorem ipsum dolor sut jhgsduklhghgdiouuisydiogsigdiosghioudhsog sdjhbasjhdhasbv</p>
+                <h1 className='text-2xl'>{item.price}</h1>
+                <p className='text-base opacity-40'>{item.description}</p>
 
             </div>
 

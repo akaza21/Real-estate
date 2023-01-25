@@ -3,6 +3,7 @@ import Card from '@/components/Card'
 import MapBox from '@/components/MapBox'
 import Navbar from '@/components/Navbar'
 import SearchBox from '@/components/SearchBox'
+import fetchProperties from '@/utils/fetchProperties'
 import Head from 'next/head'
 import Image from 'next/image'
 // import { Inter } from '@next/font/google'
@@ -10,7 +11,7 @@ import Image from 'next/image'
 
 // const inter = Inter({ subsets: ['latin'] })
 
-export default function Home() {
+export default function Home({properties}) {
   return (
     <>
     <Navbar/>
@@ -32,9 +33,11 @@ export default function Home() {
 
 
       <div className='grid grid-cols-2 gap-4  w-full px-2 py-6'>
-        <Card/>
-        <Card/>
-        <Card/>
+        {properties.map((item, index)=>{
+          return <div key={index}>
+            <Card item={item}/>
+          </div>
+        })}
         
 
       </div>
@@ -49,4 +52,18 @@ export default function Home() {
      
     </>
   )
+}
+
+
+export const getServerSideProps =async ()=>{
+  const resp = await fetchProperties();
+  let properties = resp
+  // console.log({resp});
+  return {
+    props:{
+
+      properties
+
+    }
+  }
 }
