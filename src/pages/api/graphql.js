@@ -2,9 +2,11 @@
 import { gql, ApolloServer } from "apollo-server-micro";
 import {ApolloServerPluginLandingPageGraphQLPlayground} from "apollo-server-core"
 import mongoose from "mongoose";
-import Property from "@/db/models/Property";
-const mongoString= 'mongodb+srv://shayan:SHAY%40n2002@cluster0.co5eavw.mongodb.net/test'
-const Book = require('../../db/models/Books')
+import resolvers from "../../db/resolvers";
+import typeDefs from "../../db/typeDefs";
+const mongoString= process.env.MONGO_DB_URI
+
+
 mongoose.connect(mongoString,{useNewUrlParser:true}).then(()=>{
     console.log("db connected..");
     // return server.listen({port:5000})
@@ -15,71 +17,8 @@ mongoose.connect(mongoString,{useNewUrlParser:true}).then(()=>{
 })
 
 
-const typeDefs = gql`
-  type Property {
-    price:Float
-    description: String
-    beds:Int
-    bathroom:Int
-    area:Float
-    isLiked:Boolean
-    isForSale:Boolean
-    lat:Float
-    lng:Float
 
-  }
-  input PropertyInpuit {
-    price:Float
-    description: String
-    beds:Int
-    bathroom:Int
-    area:Float
-    isLiked:Boolean
-    isForSale:Boolean
-    lat:Float
-    lng:Float
-    
-  }
-  type Query {
-    getProperties: [Property]
-  }
-  type Mutation {
-    createProperty(propertyInput : PropertyInpuit):Property!
-  }
-`;
-const resolvers = {
-    Query: {
-      getProperties: async() => {
-            
-            let properties= await Property.find().limit(10)
-            console.log(properties);
-            return properties
-        }
-    },
-    Mutation:{
-        async createProperty(_, {propertInput:{price, description, beds, bathroom, area, isLiked, isForSale, lat, lng}}){
-            const createProperty = new Property({
-              price:price,
-              description:description,
-              beds:beds,
-              bathroom:bathroom,
-              area:area,
-              isLiked:isLiked,
-              isForSale:isForSale,
-              lat:lat,
-              lng:lng
 
-            })
-      
-      
-            const res = await createProperty.save()
-            return {
-              id:res.id,
-              ...res._doc
-            }
-          }
-    }
-};
 const apolloServer = new ApolloServer({
     typeDefs,
     resolvers,
