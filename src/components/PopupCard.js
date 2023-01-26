@@ -4,7 +4,7 @@ import {BiBath} from 'react-icons/bi'
 import {FaRuler} from 'react-icons/fa'
 import Image from 'next/image'
 import {BsFillSuitHeartFill} from 'react-icons/bs'
-import Bubble from './Bubble'
+import Bubble from './Spill'
 
 function PopupCard({item}) {
   return (

@@ -1,31 +1,32 @@
 import React from "react";
 import { BsFillSuitHeartFill } from "react-icons/bs";
+import NavLink from "./NavLink";
 
-function Navbar() {
+function Navbar({active}) {
   return (
-    <div className="flex justify-between px-4 py-4 items-center">
-      <div className="text-xl">
+    <div className="flex md:justify-between justify-center px-2 md:px-4  py-4 items-center">
+      <div className="text-xl hidden md:block">
         <h1>Realestate</h1>
       </div>
 
       <div className="flex justify-center cursor-pointer">
-        <div className="text-base px-4 hover:text-[#468fd1] transition delay-150 hover:border-b-[3px] mx-2 border-[#468fd1] font-[550] opacity-90 ">
-          <h1>Search</h1>
-        </div>
-        <div className="text-base px-4 hover:text-[#468fd1] transition delay-150 hover:border-b-[3px] mx-2 border-[#468fd1] font-[550] opacity-90 ">
-          <h1>About</h1>
-        </div>
-        <div className="text-base px-4 hover:text-[#468fd1] transition delay-150 hover:border-b-[3px] mx-2 border-[#468fd1] font-[550] opacity-90 ">
-          <h1>Help</h1>
-        </div>
-        <div className="text-base px-4 hover:text-[#468fd1] transition delay-150 hover:border-b-[3px] mx-2 border-[#468fd1] font-[550] opacity-90 ">
-          <h1>Real Estate Agents</h1>
-        </div>
-        <div className="text-base px-4 hover:text-[#468fd1] transition delay-150 hover:border-b-[3px] mx-2 border-[#468fd1] font-[550] opacity-90 ">
-          <h1>Blog</h1>
-        </div>
+        <NavLink active={active === 0? true:false}>
+            <h1>Search</h1>
+        </NavLink>
+        <NavLink active={active === 1? true:false}>
+            <h1>About</h1>
+        </NavLink>
+        <NavLink active={active === 2? true:false}>
+            <h1>Help</h1>
+        </NavLink>
+        <NavLink active={active === 3? true:false}>
+            <h1>Real Estate Agents</h1>
+        </NavLink>
+        <NavLink active={active === 4? true:false}>
+            <h1>Blog</h1>
+        </NavLink>
       </div>
-      <div className="flex justify-between items-center">
+      <div className="hidden md:flex justify-between items-center ">
         <div className="opacity-50">
           <BsFillSuitHeartFill />
         </div>

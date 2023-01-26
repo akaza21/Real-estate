@@ -7,7 +7,7 @@ body{
   font-family: 'DM Sans', sans-serif;
 }
 .mapboxgl-canvas{
-  border-radius: 2rem;
+  border-radius: 1.5rem;
 }
 .mapboxgl-popup-content {
   border-radius: 1rem !important;
