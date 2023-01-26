@@ -40,7 +40,7 @@ function MapBox({properties}) {
 
     <Fade delay={600} triggerOnce >
 
-      <div className=" rounded-3xl px-8 h-[40vh] md:h-[70vh] mt-8">
+      <div className=" rounded-3xl px-8 h-[40vh] lg:h-[70vh] mt-8">
         {/* <div  id="map" className="map-container h-[80vh] rounded-3xl pl-8" /> */}
         {viewport.latitude && viewport.longitude && (
           <Map

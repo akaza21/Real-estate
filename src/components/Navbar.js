@@ -19,9 +19,12 @@ function Navbar({active}) {
         <NavLink active={active === 2? true:false}>
             <h1>Help</h1>
         </NavLink>
-        <NavLink active={active === 3? true:false}>
-            <h1>Real Estate Agents</h1>
-        </NavLink>
+        <div className="hidden lg:block">
+
+          <NavLink active={active === 3? true:false}>
+              <h1>Real Estate Agents</h1>
+          </NavLink>
+        </div>
         <NavLink active={active === 4? true:false}>
             <h1>Blog</h1>
         </NavLink>

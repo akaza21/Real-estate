@@ -22,12 +22,12 @@ export default function Home({ properties }) {
   return (
     <>
       <Navbar active={0} />
-      <div className="grid grid-cols-1 md:grid-cols-8 gap-2 mt-6 px-3">
-        <div className="md:col-span-2 px-2 md:px-0">
+      <div className="grid grid-cols-1 lg:grid-cols-8 gap-2 mt-6 px-3">
+        <div className="lg:col-span-2 px-2 md:px-0">
         <SearchBox />
 
         </div>
-        <div className="mx-2 hidden md:block">
+        <div className="mx-2 hidden lg:block">
           <Bubble>
             <div className="my-1 flex justify-center items-center">
               <h1 className=" opacity-90 text-xs">For Sale</h1>
@@ -37,7 +37,7 @@ export default function Home({ properties }) {
             </div>
           </Bubble>
         </div>
-        <div className="mx-2 hidden md:block">
+        <div className="mx-2 hidden lg:block">
           <Bubble>
             <div className="my-1 flex justify-center items-center">
               <h1 className=" opacity-90 text-xs">Type : House</h1>
@@ -47,7 +47,7 @@ export default function Home({ properties }) {
             </div>
           </Bubble>
         </div>
-        <div className="mx-2 hidden md:block">
+        <div className="mx-2 hidden lg:block">
           <Bubble>
             <div className="my-1 flex justify-center items-center">
               <h1 className=" opacity-90 text-xs">Min Price : $500k</h1>
@@ -57,7 +57,7 @@ export default function Home({ properties }) {
             </div>
           </Bubble>
         </div>
-        <div className="mx-2 hidden md:block">
+        <div className="mx-2 hidden lg:block">
           <Bubble>
             <div className="my-1 flex justify-center items-center">
               <h1 className=" opacity-90 text-xs">Max Price : $700k</h1>
@@ -67,7 +67,7 @@ export default function Home({ properties }) {
             </div>
           </Bubble>
         </div>
-        <div className="mx-2 hidden md:block">
+        <div className="mx-2 hidden lg:block">
           <Bubble>
             <div className="my-1 flex justify-center items-center">
               <h1 className=" opacity-90 text-xs">Floor Area : 600m</h1>
@@ -77,7 +77,7 @@ export default function Home({ properties }) {
             </div>
           </Bubble>
         </div>
-        <div className="mx-2 hidden md:block">
+        <div className="mx-2 hidden lg:block">
           <Bubble>
             <div className="my-1 flex justify-center items-center ">
               <div className="mx-2 rotate-90 text-xl">
@@ -91,7 +91,7 @@ export default function Home({ properties }) {
 
       <div className="grid grid-cols-1 md:grid-cols-2   w-full px-4 py-8   ">
         <div className="w-full">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4  w-full px-2 py-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4  w-full px-2 py-6">
             {properties.slice(0, next)?.map((item, index) => {
               return (
                 <div key={index}>
