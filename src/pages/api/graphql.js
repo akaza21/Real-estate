@@ -3,9 +3,8 @@ import { gql, ApolloServer } from "apollo-server-micro";
 import {ApolloServerPluginLandingPageGraphQLPlayground} from "apollo-server-core"
 import mongoose from "mongoose";
 import Property from "@/db/models/Property";
-const mongoString= process.env.MONGO_DB_URI
-console.log(process.env);
-
+const mongoString= 'mongodb+srv://shayan:SHAY%40n2002@cluster0.co5eavw.mongodb.net/test'
+const Book = require('../../db/models/Books')
 mongoose.connect(mongoString,{useNewUrlParser:true}).then(()=>{
     console.log("db connected..");
     // return server.listen({port:5000})
