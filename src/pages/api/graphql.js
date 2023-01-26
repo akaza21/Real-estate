@@ -4,7 +4,7 @@ import {ApolloServerPluginLandingPageGraphQLPlayground} from "apollo-server-core
 import mongoose from "mongoose";
 import resolvers from "../../db/resolvers";
 import typeDefs from "../../db/typedefs";
-const mongoString= process.env.MONGO_DB_URI
+const mongoString= 'mongodb+srv://shayan:SHAY%40n2002@cluster0.co5eavw.mongodb.net/test'
 
 
 mongoose.connect(mongoString,{useNewUrlParser:true}).then(()=>{
