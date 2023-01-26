@@ -22,7 +22,7 @@ function Card({item, index}) {
 
       <div className='w-full shadow-lg my-2  rounded-3xl transition ease-in-out delay-[120] md:hover:-translate-y-2 md:hover:scale-105 cursor-pointer'>
           <div className='rounded-3xl h-[20vh] bg-gray-500 w-full relative' id='card-img'>
-            <Image src={'https://picsum.photos/id/237/200/300'} className="rounded-3xl" fill objectFit='cover'  />
+            <Image src={'https://picsum.photos/id/42/800/400'} className="rounded-3xl" fill objectFit='cover'  />
 
             <div className='absolute top-6 flex justify-between w-full items-start px-4'>
               <div className='flex justify-start font-semibold'>
