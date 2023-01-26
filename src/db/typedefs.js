@@ -1,20 +1,35 @@
 const { gql } = require("apollo-server");
-module.exports = gql`
-type Recipe{
-  name:String
-}
+module.exports =  gql`
+type Property {
+  price:Float
+  description: String
+  beds:Int
+  bathroom:Int
+  area:Float
+  isLiked:Boolean
+  isForSale:Boolean
+  lat:Float
+  lng:Float
 
-input RecipeInput {
-  name:String
+}
+input PropertyInpuit {
+  price:Float
+  description: String
+  beds:Int
+  bathroom:Int
+  area:Float
+  isLiked:Boolean
+  isForSale:Boolean
+  lat:Float
+  lng:Float
   
 }
-
 type Query {
-  recipe(ID: ID! ):Recipe!
-  getRecipes (amount: Int):[Recipe]
+  getProperties: [Property]
 }
-
 type Mutation {
-  createBook(recipeInput : RecipeInput):Recipe!
+  createProperty(propertyInput : PropertyInpuit):Property!
 }
-`;
+`
+
+

@@ -1,27 +1,35 @@
-const Recipe = require('./models/Books')
+const Property = require('./models/Property')
 
 module.exports = {
-  Query:{
-    async recipe(_,{ID}){
-      return await Recipe.findById(ID) 
-    }
-    ,
-    async getRecipes(_, {amount}){
-      return await Recipe.find().sort({createdAt:-1}).limit(amount)
-    }
+  Query: {
+    getProperties: async() => {
+          
+          let properties= await Property.find().limit(10)
+          console.log(properties);
+          return properties
+      }
   },
   Mutation:{
-    async createRecipe(_, {recipeInput:{name}}){
-      const createRecipe = new Recipe({
-        name:name
-      })
+      async createProperty(_, {propertInput:{price, description, beds, bathroom, area, isLiked, isForSale, lat, lng}}){
+          const createProperty = new Property({
+            price:price,
+            description:description,
+            beds:beds,
+            bathroom:bathroom,
+            area:area,
+            isLiked:isLiked,
+            isForSale:isForSale,
+            lat:lat,
+            lng:lng
 
-
-      const res = await createRecipe.save()
-      return {
-        id:res.id,
-        ...res._doc
-      }
-    }
+          })
+    
+    
+          const res = await createProperty.save()
+          return {
+            id:res.id,
+            ...res._doc
+          }
+        }
   }
-}
+};
