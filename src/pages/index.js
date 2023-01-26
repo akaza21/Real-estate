@@ -126,7 +126,7 @@ export default function Home({ properties }) {
   );
 }
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
   const resp = await fetchProperties();
   let properties = resp;
   // console.log({resp});
@@ -134,6 +134,6 @@ export const getStaticProps = async () => {
     props: {
       properties,
     },
-    revalidate: 10,
+   
   };
 };
