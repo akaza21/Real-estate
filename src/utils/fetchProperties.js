@@ -1,7 +1,7 @@
 const axios = require("axios");
 // const endpoint = "http://localhost:3000/api/graphql";
 const dev = process.env.NODE_ENV !== 'production'
-const server = dev ? 'http://localhost:3000/api/graphql' : 'https://your_deployment.server.com/api/graphql';
+const server = dev ? 'http://localhost:3000/api/graphql' : 'https://real-estate-1h5d.vercel.app/api/graphql';
 const graphqlQuery = `query Query{
         getProperties{
           price
