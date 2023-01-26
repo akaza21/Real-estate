@@ -3,7 +3,7 @@ import { gql, ApolloServer } from "apollo-server-micro";
 import {ApolloServerPluginLandingPageGraphQLPlayground} from "apollo-server-core"
 import mongoose from "mongoose";
 import resolvers from "../../db/resolvers";
-import typeDefs from "../../db/typeDefs";
+import typeDefs from "../../db/typedefs";
 const mongoString= process.env.MONGO_DB_URI
 
 
