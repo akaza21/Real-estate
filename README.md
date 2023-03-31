@@ -1,38 +1,73 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+# RealEstate- NextJs + GraphQL boilerplate
+## It is an webapp which uses NextJs and GraphQL API with mongodb
+### Netlify Link :https://zesty-sopapillas-e7c05a.netlify.app/
+### Vercel Link :https://real-estate-1h5d.vercel.app/
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+## GraphQL API Reference
+
+#### Get all listings
+
+```http (graphql)
+  GET https://real-estate-1h5d.vercel.app/api/graphql
+
+  query Query{
+    getProperties{
+        description
+        price
+        lat
+        lng
+        isLiked
+        isForSale
+        bathroom
+        beds
+        area
+    }
+  }
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+![App Screenshot](https://i.imgur.com/O8s4eER.png)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+![App Screenshot](https://i.imgur.com/b3HUYiz.png)
+## Author
 
-## Deploy on Vercel
+- [@akaza21](https://www.github.com/akaza21)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Installation
+
+```bash
+    git clone https://github.com/akaza21/RealEstate
+
+```
+### `Navigation`
+```bash
+    cd RealEstate
+```
+### `Installation`
+
+
+
+```bash
+  npm i
+```
+
+
+
+### `Runserver`
+
+```bash
+  npm run dev
+```
+
+
+
+
